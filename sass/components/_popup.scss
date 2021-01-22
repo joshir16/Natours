@@ -1,0 +1,137 @@
+.popup{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .3);
+    z-index: 3000;
+    transition: all .3s;
+
+    opacity: 0;
+    visibility: hidden;
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    
+    &_content{
+        @include absCenter;
+        width: 75%;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.5);
+        transition: all .4s;
+
+        @include respond(tab-port){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;   
+        }
+        // @include respond(phone){
+        //     height: 80vh;
+        //     width: 80vw;       
+        // }
+       
+    }
+
+    &_left{
+        width: 33.333334%;
+        display: table-cell;
+
+        @include respond(tab-port){
+            width: 90%;
+            display: flex;
+            // flex-direction: column;
+            justify-content: center;
+            align-items: center;   
+            // height: 100vh;        
+        }
+    }
+
+    &_right{
+        width: 66.66667%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+        
+        @include respond(tab-port){
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;   
+            vertical-align: bottom;
+        }
+    }
+
+    &_img{
+        display: block;
+        width: 100%;
+        
+        @include respond(tab-port){
+            width: 50%;
+        }
+    }
+
+    &_text{
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid $color-grey-light-2;
+
+        @include respond(tab-port){
+            column-count: 0;
+            column-gap: 0;
+            column-rule: 0;
+        }
+
+        @include respond(phone){
+            column-count: 0;
+            column-gap: 0;
+            column-rule: 0;
+        }
+
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+
+    &:target{
+        opacity: 1;
+        visibility: visible
+    }
+
+    &:target &_content{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &_close{
+        &:link,
+        &:visited{
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover{
+            color: $color-primary;
+        }
+    }
+
+}

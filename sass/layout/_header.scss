@@ -1,0 +1,40 @@
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to bottom right,rgba($color-primary-light, 0.8),rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0 , 100% 0, 100% 85vh, 0 100% );
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+        only screen and(-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
+        only screen and (min-width: 125em){
+        background-image: linear-gradient(to bottom right,rgba($color-primary-light, 0.8),rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
+    }
+    
+    @include respond(phone){
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0 , 100% 0, 100% 85vh, 0 100% );
+    }
+
+    &-logo-box{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &-logo{
+        height: 3.5rem;
+    }
+    
+    &-text-box{
+        position: absolute;
+        border-radius: 1rem;
+        text-align: center; 
+    }
+} 
