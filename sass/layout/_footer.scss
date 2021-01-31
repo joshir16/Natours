@@ -1,83 +1,84 @@
-.footer{
-    background-color: $color-grey-dark-3;
-    padding: 18rem 0;
-    font-size: 1.4rem;
+/** @format */
 
-    @include respond(tab-port){
-        padding: 8rem 0;            
+.footer {
+  background-color: $color-grey-dark-3;
+  padding: 18rem 0;
+  font-size: 1.4rem;
+
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
+  &_logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &_logo {
+    width: 15rem;
+    height: auto;
+  }
+
+  &_nav {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &_list {
+    list-style: none;
+  }
+
+  &_items {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &_link {
+    &:link,
+    &:visited {
+      color: $color-grey-light-1;
+      background-color: $color-grey-dark-3;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.3s;
     }
 
-    &_logo-box{
-        text-align: center;
-        margin-bottom: 8rem;
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      transform: rotate(5deg) scale(1.3);
+    }
+  }
 
-        @include respond(tab-port){
-            margin-bottom: 6rem;   
-        }
+  &_copyright {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    width: 62%;
+    float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+      text-align: center;
     }
 
-    &_logo{
-        width: 15rem;
-        height: auto;
+    &:first-child {
+      margin-bottom: 2rem;
     }
-
-    &_nav{
-        border-top: 1px solid $color-grey-dark;
-        padding-top: 2rem;
-        display: inline-block;
-
-        @include respond(tab-port){  
-            width: 100%;
-            text-align: center;        
-        }
-    }
-
-    &_list{
-        list-style: none;
-    }
-
-    &_items{
-        display: inline-block;
-
-        &:not(:last-child){
-            margin-right: 1.5rem;
-        }
-    }
-
-    &_link{
-        &:link,
-        &:visited{
-            color: $color-grey-light-1;
-            background-color: $color-grey-dark-3;
-            text-decoration: none;
-            text-transform: uppercase;
-            display: inline-block;
-            transition: all .3s;
-        }
-
-        &:hover,
-        &:active{
-            color: $color-primary;
-            box-shadow: 0 1rem 2rem rgba($color-black, .4);
-            transform: rotate(5deg) scale(1.3);
-        }
-    }
-
-
-    &_copyright{
-        border-top: 1px solid $color-grey-dark;
-        padding-top: 2rem;
-        width: 62%;
-        float: right;
-
-        @include respond(tab-port){
-            width: 100%;
-            float: none;
-            text-align: center;
-        }
-
-        &:first-child{
-            margin-bottom: 2rem;
-        }
-    }
+  }
 }

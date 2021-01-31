@@ -1,4 +1,5 @@
 /** @format */
+"use strict";
 
 const closeNavBar = document.getElementById("navigation_nav");
 
